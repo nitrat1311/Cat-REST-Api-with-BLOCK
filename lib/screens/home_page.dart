@@ -17,20 +17,18 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: HomeModel().appBarText[_currentIndex],
-        backgroundColor: theme.primaryColor,
-      ),
-      body: HomeModel().screens[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        selectedItemColor: theme.primaryColor,
-        onTap: (index) => setState(() => _currentIndex = index),
-        items: HomeModel().bottomNavBars,
-      ),
-    );
+        appBar: AppBar(
+          centerTitle: true,
+          title: HomeModel().appBarText[_currentIndex],
+          backgroundColor: theme.primaryColor,
+        ),
+        body: HomeModel().screens[_currentIndex],
+        bottomNavigationBar: BottomNavigationBar(
+            currentIndex: _currentIndex,
+            showSelectedLabels: false,
+            showUnselectedLabels: true,
+            selectedItemColor: theme.primaryColor,
+            onTap: (index) => setState(() => _currentIndex = index),
+            items: HomeModel().bottomNavBars));
   }
 }
