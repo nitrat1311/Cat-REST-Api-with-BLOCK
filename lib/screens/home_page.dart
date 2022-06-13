@@ -12,25 +12,23 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _currentIndex = 0;
+  int _currentIndex = 1;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: HomeModel().appBarText[_currentIndex],
-        backgroundColor: theme.primaryColor,
-      ),
-      body: HomeModel().screens[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        selectedItemColor: theme.primaryColor,
-        onTap: (index) => setState(() => _currentIndex = index),
-        items: HomeModel().bottomNavBars,
-      ),
-    );
+        appBar: AppBar(
+          centerTitle: true,
+          title: HomeModel().appBarText[_currentIndex],
+          backgroundColor: theme.primaryColor,
+        ),
+        body: HomeModel().screens[_currentIndex],
+        bottomNavigationBar: BottomNavigationBar(
+            currentIndex: _currentIndex,
+            showSelectedLabels: false,
+            showUnselectedLabels: true,
+            selectedItemColor: theme.primaryColor,
+            onTap: (index) => setState(() => _currentIndex = index),
+            items: HomeModel().bottomNavBars));
   }
 }
